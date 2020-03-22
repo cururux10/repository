@@ -3,5 +3,8 @@ import random
 import time
 for i in range(10):
     value = random.randint(-200,200)
+    if value:
     requests.get("https://api.thingspeak.com/update?api_key=JCI5BVCP1XN6W8V4&field1=" + str(value))
     time.sleep(20) # 20second delay
+    else:
+        i--
